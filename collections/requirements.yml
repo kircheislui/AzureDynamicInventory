@@ -1,0 +1,17 @@
+# Tower automatically installs these collections when project syncs
+collections:
+  - name: azure.azcollection
+plugin: azure_rm
+auth_source: env
+plain_host_names: yes
+exclude_host_filters:
+- powerstate != 'running'
+keyed_groups:
+- prefix: tag
+  key: tags
+- prefix: azure_location
+  key: location
+hostvar_expressions:
+  ansible_host: private_ipv4_addresses | first
+conditional_groups:
+  all_hosts_group: true
