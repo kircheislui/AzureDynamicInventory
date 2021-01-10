@@ -1,0 +1,2 @@
+# AzureDynamicInventory
+# AzureDynamicInventory
